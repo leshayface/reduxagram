@@ -19,7 +19,7 @@ const router = (
         <Route path="view/:postId" component={Single}></Route>
       </Route>
     </Router>
-</Provider>
+  </Provider>
 )
 
 render ( router, document.getElementById('root'))

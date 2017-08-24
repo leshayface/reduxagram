@@ -1,6 +1,7 @@
-import { createStore, compose } from 'redux';
+import { createStore, compose, applyMiddleware  } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
+import { devToolsEnhancer } from 'redux-devtools-extension';
 
 import { rootReducer } from './reducers/'
 
@@ -12,7 +13,7 @@ const defaultState = {
   posts
 }
 
-const store = createStore(rootReducer, defaultState);
+const store = createStore(rootReducer, defaultState, devToolsEnhancer());
 
 export const history = syncHistoryWithStore(browserHistory, store);
 
